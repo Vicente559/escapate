@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <header>
+                    <nav class="navbar navbar-light bg-primary fixed-top">
+                        <div class="container-fluid">
+                          <a class="navbar-brand text-danger text-bold" href="#"><i class="bi bi-airplane-engines"></i> ESCÁPATE <i class="bi bi-bus-front-fill"></i></a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                              <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> Escápate</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                  <a class="nav-link active" onclick="opcion(this);" aria-current="page" data-bs-dismiss="offcanvas" href="#"><i class="bi bi-airplane-fill"></i> Avión</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link active" onclick="opcion(this);" aria-current="page" data-bs-dismiss="offcanvas" href="#"><i class="bi bi-train-freight-front-fill"></i> Barco</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link active" onclick="opcion(this);" aria-current="page" data-bs-dismiss="offcanvas" href="#"><i class="bi bi-truck-front-fill"></i> Autobús</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link active" onclick="opcion(this);"  aria-current="page" data-bs-dismiss="offcanvas" href="#"><i class="bi bi-door-open-fill"></i> Salir</a>
+                                </li>
+                                
+                              </ul>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </nav>
+                </header>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 mx-auto text-center">
+                    <section>
+                      <div class="animate__animated animate__fadeIn">
+                        <img id="pantalla1" src="imagenes/logo.png" alt="logo" width="100%">
+                        <div id="pantalla2" style="display: none;">
+                          <br>
+                          <h4>Usted decidió viajar en <span id="viaje"></span></h4>
+                          <div class="form-gruop">
+                            <label for="">Fecha</label>
+                            <input type="date" class="form-control">
+       
+                          </div>
+                          <div class="form-gruop">
+                            <label for="">Destino</label>
+                            <input type="text" class="form-control">
+       
+                          </div>
+                          <br>
+                          <div class="form-gruop">
+                            <button class="btn btn-primary w-100">Aceptar</button>
+       
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/jquery3.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script>
+      function opcion(e){
+        a=e.textContent;
+        document.getElementById("pantalla2").style.display="block";
+        document.getElementById("pantalla1").style.display="none";
+        if (a==" Avión"){
+          document.getElementById("viaje").innerHTML=" Avión";
+        }
+        if (a==" Barco"){
+          document.getElementById("viaje").innerHTML=" Barco";
+        }
+        if (a==" Autobús"){
+          document.getElementById("viaje").innerHTML=" Autobús";
+        }
+        if (a==" Salir"){
+          document.getElementById("pantalla2").style.display="none";
+          document.getElementById("pantalla1").style.display="block";
+        }
+      }
+    </script>
+</body>
+</html>
